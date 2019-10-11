@@ -1,0 +1,410 @@
+﻿<div class="row">
+     <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3" style="border-right:solid; border-right-color:#eeeeee; ">
+
+         <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                 <div class="row">
+                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                             <br />
+                             <img src="" class="img-circle img-responsive" id="pic-field" alt="Profile Picture" width="202" height="202" />
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                 <div class="row">
+                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                        <label for="name-field" style="color:white;">Name:</label>
+                     </div>
+                 </div>
+
+                 <input style="background-color:#e6e6e6" type="text" class="form-control" id="name-field" readonly />
+                 <br />
+             </div>
+         </div>
+
+         <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                 <div class="row">
+                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                         <label for="name-field" style="color:white;">Email:</label>
+                     </div>
+                 </div>
+
+                 <input style="background-color:#e6e6e6" type="text" class="form-control" id="email-field" readonly/>
+                 <br />
+             </div>
+         </div>
+
+         <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                 <div class="row">
+                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                         <label for="name-field" style="color:white;">User URL:</label>
+                     </div>
+                 </div>
+
+                 <input style="background-color:#e6e6e6" type="text" class="form-control" id="url-field" readonly />
+                 <br /><br />
+             </div>
+         </div>
+     </div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2"></div>
+
+     <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+         <div id="FirstPanel">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                    <br /><br /><br />
+                    <label for="name-field" style="color:white;">Enter friend Usernames:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                    <input class="form-control add-new-name" style="width:50%; display:inline; background-color:#e6e6e6; margin-bottom:3px;" id="add-single-name-field" readonly />
+                    <button type="button" class="btn btn-success btn-sm" id="add-new-name">Add</button>
+                </div>
+            </div>
+            <div class="container-step-form">
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                    <br />
+                    <button type="button" style="width:50%" class="btn btn-success btn-block" id="submit-names">Submit</button>
+                </div>
+            </div>
+         </div>
+
+         <div id="SecondPanel" style="display:none;">
+
+             <div class="row" style="padding-top:5%; padding-right:50%; color: white;">
+                 Danceability:
+                 <div class="progress">
+                     <div class="progress-bar progress-bar-success" role="progressbar"
+                          aria-valuenow="70" aria-valuemax="100" style="" id="dance-bar"></div>
+                 </div>
+             </div>
+
+             <div class="row" style="padding-top:2%; padding-right:50%; color:white;">
+                 Energy:
+                 <div class="progress">
+                     <div class="progress-bar progress-bar-success" role="progressbar"
+                          aria-valuenow="70" aria-valuemax="100" style="" id="energy-bar"></div>
+                 </div>
+             </div>
+
+             <div class="row" style="padding-top:2%; padding-right:50%; color:white;">
+                 Speechiness:
+                 <div class="progress">
+                     <div class="progress-bar progress-bar-success" role="progressbar"
+                          aria-valuenow="70" aria-valuemax="100" style="" id="speech-bar"></div>
+                 </div>
+             </div>
+
+             <div class="row" style="padding-top:2%; padding-right:50%; color:white;" id="song-list-container">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     <div id="scrollArea" class="clusterize-scroll" style="align-content:center;">
+                         <ul id="contentArea" class="clusterize-content" style="color:white; width:70%;margin:auto;display:inline-block;">
+                             <li class="clusterize-no-data">Loading data…</li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="row GenreSelections" style="padding-top:2%; padding-right:50%; color:white;">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     Failed to collect genre data, please select 5 genres.
+                 </div>
+             </div>
+             <div class="row GenreSelections" style="padding-top:2%; padding-right:50%; color:white;" id="genre-list-container">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     <select id="genre-list" class="selectpicker" multiple data-max-options="5" data-live-search="true"></select>
+                 </div>
+             </div>
+             <div class="row GenreSelections" style="padding-top:2%; padding-right:50%; color:white;">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     <button type="button" style="width:80%;" class="btn btn-success btn-block" id="create-playlist-from-genres">Get Song List</button>
+                 </div>
+             </div>
+
+             <div class="row CreateFields" style="padding-top:2%; padding-right:50%; color:white;">
+                 <hr />
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     Playlist Name:
+                 </div>
+             </div>
+             <div class="row CreateFields" style="padding-top:2%; padding-right:50%; color:white;">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     <input type="text" class="form-control" id="txtPlaylistName" value="" placeholder="Playlist Name"  />
+                 </div>
+             </div>
+             <div class="row CreateFields" style="padding-top:2%; padding-right:50%; color:white;">
+                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                     <button type="button" style="width:80%;" class="btn btn-success btn-block" id="create-playlist">Create Playlist</button>
+                 </div>
+             </div>
+             </div>
+    </div>
+
+         <div id="ThirdPanel" style="display:none;vertical-align:middle;margin-top:15px;">
+             <iframe id="spotify-embed" src="" width="300" height="380" frameborder="0" allowtransparency="true" style="vertical-align:middle;text-align:center;"></iframe>
+         </div>
+
+    </div>
+
+<input type="hidden" id="hiddenToken" />
+<input type="hidden" id="hiddenUsername" />
+<input type="hidden" id="hiddenTrackIds" />
+
+<div class="modal fade" id="LoadingModal" style="vertical-align:central;background-color:rgba(0,0,0,0);border-color:transparent;box-shadow:none;">
+    <div class="vertical-alignment-helper" style="background-color:rgba(0,0,0,0);border-color:transparent;box-shadow:none;">
+        <div class="modal-dialog vertical-align-center" style="background-color:rgba(0,0,0,0);border-color:transparent;box-shadow:none;">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color:rgba(0,0,0,0);border-color:transparent;box-shadow:none;">
+                <div class="modal-body" style="background-color:rgba(0,0,0,0);border-color:transparent;box-shadow:none;">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-center"><img src="~/Resources/loading.gif" alt="Loading" /></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+        
+        var url = window.location.hash.substring(1);
+
+        var arrUrl = url.split("&");
+
+        var access_token = arrUrl[0].split("=")[1];
+        var token_type = arrUrl[1].split("=")[1];
+        var expires_in = arrUrl[2].split("=")[1];
+        var state = arrUrl[3].split("=")[1];
+        
+        $('#hiddenToken').val(access_token);
+
+        $.ajax({
+            url: "/Dashboard/GetUser",
+            data: {
+                AccessToken: access_token,
+                TokenType: token_type,
+                ExpiresIn: expires_in,
+                State: state
+            },
+            method: "POST",
+            success: function (result) {
+                if (result.Images[0].url != "") {
+                    var imgUrl = result.Images[0].url;
+                } else {
+                    var imgUrl = "http://placehold.it/202x202y"
+                }
+                
+                jQuery("#add-single-name-field").val(result.Id);
+                jQuery("#name-field").val(result.Username);
+                jQuery("#pic-field").attr("src", imgUrl);
+                jQuery("#email-field").val(result.Email);
+                jQuery("#url-field").val(result.Url);
+            }
+        });
+
+        $("#add-new-name").click(function () {
+            $(".container-step-form").append('<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 col-lg-12"><input class="form-control add-new-name" style="width:50%; display:inline; background-color:#e6e6e6; margin-bottom:3px;" /><button type="button" class="btn btn-danger btn-sm" id="del-new-name" style="margin-left:4px">Del</button></div></div>');
+        });
+
+        $(document).on("click", "#del-new-name", function () {
+            $(this).closest(".row").remove();
+        });
+
+        $("#submit-names").click(function () {
+            $('#LoadingModal').modal();
+            var usernames = "";
+            $(".add-new-name").each(function () {
+                usernames += $(this).val() + ",";
+            });
+
+            $.ajax({
+                url: "/Dashboard/CraftPlaylist",
+                data: { AccessToken: $('#hiddenToken').val(), NameString: usernames },
+                method: "POST",
+                success: function (result) {
+                    $('#LoadingModal').modal('hide');
+                    $('#FirstPanel').css('display', 'none');
+                    $('#SecondPanel').css('display', '');
+
+                    var dataArr = [];
+                    var trackString = "";
+                    
+                    for (var i = 0; i < result.Tracks.tracks.length; i++) {
+                        dataArr.push("<li>" + result.Tracks.tracks[i].name + "</li>");
+                        trackString += result.Tracks.tracks[i].id + ",";
+                    }
+
+                    $('#hiddenTrackIds').val(trackString);
+                    
+                    $('#dance-bar').css({
+                        "width": (result.AvgDancability*100)+"%",
+                        "text-align": 'left'
+                });
+                    $('#energy-bar').css({
+                        "width": (result.AvgEnergy * 100) + "%",
+                        "text-align": 'left'
+                    });
+                    $('#speech-bar').css({
+                        "width": (result.AvgSpeechiness * 100) + "%",
+                        "text-align": 'left'
+                    });
+
+                    if(result.Tracks.tracks.length == 0) {
+                        $('.GenreSelections').each(function () {
+                            $(this).css("display", "");
+                        });
+                        $('.CreateFields').each(function () {
+                            $(this).css("display", "none");
+                        });
+
+                        $.ajax({
+                            url: "/Dashboard/GetGenreList",
+                            data: { AccessToken: $('#hiddenToken').val() },
+                            method: "POST",
+                            success: function (result) {
+                                var optionString = "";
+                                for (var i in result.genres.genres) {
+                                    optionString += '<option>' + result.genres.genres[i] + '</option>';
+                                }
+                                $('#genre-list').html(optionString).selectpicker('refresh');
+                            }
+                        });
+                    }
+                    else {
+                        $('.GenreSelections').each(function () {
+                            $(this).css("display", "none");
+                        });
+                        var clusterize = new Clusterize({
+                            rows: dataArr,
+                            scrollId: 'scrollArea',
+                            contentId: 'contentArea'
+                        });
+                    }
+
+                }
+            });
+        });
+
+        $('#create-playlist').on('click', function () {
+            if ($('#txtPlaylistName').val().length < 2) {
+                $('#txtPlaylistName').css('border', '2px solid red');
+            }
+            else {
+                $('#LoadingModal').modal();
+                $.ajax({
+                    url: "/Dashboard/CreateCustomPlaylist",
+                    data: { AccessToken: $('#hiddenToken').val(), UserId: $("#add-single-name-field").val(), TrackStringList: $('#hiddenTrackIds').val(), PlaylistName: $('#txtPlaylistName').val() },
+                    method: "POST",
+                    success: function (result) {
+                        $('#LoadingModal').modal('hide');
+                        $('#SecondPanel').css('display', 'none');
+                        $('#ThirdPanel').css('display', '');
+                        var iframesrc = "https://embed.spotify.com/?uri=spotify:trackset:Groupify:" + result.TrackIdList;
+                        $('#spotify-embed').attr('src', iframesrc);
+                    }
+                });
+            }
+        });
+
+        $('#create-playlist-from-genres').on('click', function () {
+            var usernames = "";
+            $(".add-new-name").each(function () {
+                usernames += $(this).val() + ",";
+            });
+            $('#LoadingModal').modal();
+            $.ajax({
+                url: "/Dashboard/CraftPlaylistFromGenres",
+                data: { AccessToken: $('#hiddenToken').val(), NameString: usernames, GenreStringList: $('#genre-list').selectpicker('val') },
+                method: "POST",
+                success: function (result) {
+                    $('.GenreSelections').each(function () {
+                        $(this).css("display", "none");
+                    });
+                    $('.CreateFields').each(function () {
+                        $(this).css("display", "");
+                    });
+
+                    $('#LoadingModal').modal('hide');
+                    $('#FirstPanel').css('display', 'none');
+                    $('#SecondPanel').css('display', '');
+
+                    var dataArr = [];
+                    var trackString = "";
+
+                    for (var i = 0; i < result.Tracks.tracks.length; i++) {
+                        dataArr.push("<li>" + result.Tracks.tracks[i].name + "</li>");
+                        trackString += result.Tracks.tracks[i].id + ",";
+                    }
+
+                    $('#hiddenTrackIds').val(trackString);
+
+                    $('#dance-bar').css({
+                        "width": (result.AvgDancability * 100) + "%",
+                        "text-align": 'left'
+                    });
+                    $('#energy-bar').css({
+                        "width": (result.AvgEnergy * 100) + "%",
+                        "text-align": 'left'
+                    });
+                    $('#speech-bar').css({
+                        "width": (result.AvgSpeechiness * 100) + "%",
+                        "text-align": 'left'
+                    });
+
+                    if (result.Tracks.tracks.length == 0) {
+                        $('.GenreSelections').each(function () {
+                            $(this).css("display", "");
+                        });
+                        $('.CreateFields').each(function () {
+                            $(this).css("display", "none");
+                        });
+
+                        $.ajax({
+                            url: "/Dashboard/GetGenreList",
+                            data: { AccessToken: $('#hiddenToken').val() },
+                            method: "POST",
+                            success: function (result) {
+                                var optionString = "";
+                                for (var i in result.genres.genres) {
+                                    optionString += '<option>' + result.genres.genres[i] + '</option>';
+                                }
+                                $('#genre-list').html(optionString).selectpicker('refresh');
+                            }
+                        });
+                    }
+                    else {
+                        $('.GenreSelections').each(function () {
+                            $(this).css("display", "none");
+                        });
+                        var clusterize = new Clusterize({
+                            rows: dataArr,
+                            scrollId: 'scrollArea',
+                            contentId: 'contentArea'
+                        });
+                    }
+
+                }
+            });
+        });
+    });
+
+    </script>
+}
